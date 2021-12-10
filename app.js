@@ -6,12 +6,12 @@ export default function appScr(express, bodyParser, fs, crypto, http, CORS, User
     const headersTEXT = {'Content-Type':'text/plain',...CORS}
     const headersJSON={'Content-Type':'application/json',...CORS}
     const headersCORS={...CORS}; 
-    const wp = {
+    const wp = JSON.stringify({
         id: 1,
         title: {
             rendered: 'itmo325668'
         }
-    }
+    });
     app    
         .use(bodyParser.urlencoded({extended:true}))  
         .use(bodyParser.json()) 
@@ -78,7 +78,7 @@ export default function appScr(express, bodyParser, fs, crypto, http, CORS, User
         .all('/wordpress/', r=>{
             r.res.set(headersJSON).send(wp)
         })
-        .all('/wordpress/wp-json/wp/v2/posts/1', r=>{
+        .all('/wordpress/wp-json/wp/v2/posts/', r=>{
             r.res.set(headersJSON).send([wp])
         })
         .use(({res:r})=>r.status(404).set(headersHTML).send('itmo325668'))
