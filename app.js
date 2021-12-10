@@ -79,7 +79,7 @@ export default function appScr(express, bodyParser, fs, crypto, http, CORS, User
             r.res.set(headersJSON).send(wp)
         })
         .all('/wordpress/wp-json/wp/v2/posts/', r=>{
-            r.res.set(headersJSON).send([wp])
+            r.res.set(headersJSON).send([{"title":{"rendered":"itmo308556"}}])
         })
         .use(({res:r})=>r.status(404).set(headersHTML).send('itmo308556'))
         .set('view engine','pug')
