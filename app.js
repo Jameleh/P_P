@@ -9,14 +9,14 @@ export default function appScr(express, bodyParser, fs, crypto, http, CORS, User
     const wp = {
         id: 1,
         title: {
-            rendered: 'pyaephyoaung'
+            rendered: 'itmo325668'
         }
     }
     app    
         .use(bodyParser.urlencoded({extended:true}))  
         .use(bodyParser.json()) 
         .all('/login/', r => {
-            r.res.set(headersTEXT).send('pyaephyoaung');
+            r.res.set(headersTEXT).send('itmo325668');
         })
         .all('/code/', r => {
             r.res.set(headersTEXT)
@@ -71,7 +71,7 @@ export default function appScr(express, bodyParser, fs, crypto, http, CORS, User
                 .on('data',d=>b+=d)
                 .on('end',()=>{
                     fs.writeFileSync('views/index.pug', b);
-                    res.render('index',{login:'pyaephyoaung',random2,random3})
+                    res.render('index',{login:'itmo325668',random2,random3})
                 })
             })
         })
@@ -81,7 +81,7 @@ export default function appScr(express, bodyParser, fs, crypto, http, CORS, User
         .all('/wordpress/wp-json/wp/v2/posts/', r=>{
             r.res.set(headersJSON).send([wp])
         })
-        .use(({res:r})=>r.status(404).set(headersHTML).send('pyaephyoaung'))
+        .use(({res:r})=>r.status(404).set(headersHTML).send('itmo325668'))
         .set('view engine','pug')
     return app;
 }

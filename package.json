@@ -9,7 +9,7 @@
         "dev": "nodemon ."
     },
     "keywords": [],
-    "author": "pyaephyoaung",
+    "author": "itmo325668",
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.19.0",
